@@ -28,6 +28,7 @@ public class MathUtil {
         
         System.out.println("-5!: " + MathUtility.getFactorial(-5));
         //e: ném về ngoại lệ IllegalArgumentExeption nếu giai thừa -5
+        System.out.println("I want to see the RED or GREEN!!!");
     }
     
     //Code viết ra thì Dev phải test trước
