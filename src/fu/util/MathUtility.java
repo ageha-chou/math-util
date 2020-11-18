@@ -17,20 +17,35 @@ public class MathUtility {
     //hàm tính n giai thừa. n >= 0 && n <= 20
     //nếu quá 20 tràn kiểu long
     //0! = 1; 1! = 1; n! = 1.2.3....n
+//    public static long getFactorial(int n){
+//        if(n < 0 || n > 20)
+//            throw new IllegalArgumentException("n must be >= 0 & <= 20");
+//        //đưa đầu vào cà chớn, mình hk trả vế 1 giá trị để ám chỉ sai rồi
+//        //mình chửi luôn
+//        if(n == 0 || n == 1){
+//            return 1; //0! = 1, 1! =1
+//        }//sống sót tới đây thì n > 1 và <= 20 rồi
+//        
+//        long result = 1;
+//        
+//        for (int i = 2; i <= n; i++) {
+//            result *= i;
+//        }
+//        return result;
+//    }
+    
+    //viết hàm đệ quy cho pro
+    //n! = n * (n-1)!
     public static long getFactorial(int n){
-        if(n < 0 || n > 20)
-            throw new IllegalArgumentException("n must be >= 0 & <= 20");
-        //đưa đầu vào cà chớn, mình hk trả vế 1 giá trị để ám chỉ sai rồi
-        //mình chửi luôn
-        if(n == 0 || n == 1){
-            return 1; //0! = 1, 1! =1
-        }//sống sót tới đây thì n > 1 và <= 20 rồi
-        
-        long result = 1;
-        
-        for (int i = 2; i <= n; i++) {
-            result *= i;
+        if(n < 0 || n > 20){
+            throw new IllegalArgumentException("n must be between 0 and 20");
         }
-        return result;
+        if(n == 0 || n == 1){
+            return 1;
+        }
+        
+        return n*getFactorial(n - 1);
+        //gọi lại chính hàm của mình vs quy mô khác, n - 1
+        //đi mãi sẽ về 1
     }
 }
